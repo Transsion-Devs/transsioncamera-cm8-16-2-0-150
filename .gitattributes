@@ -1,2 +1,5 @@
 # The stock camera APK is a 150 MB binary; store it via Git LFS.
 original/TranssionCamera.apk filter=lfs diff=lfs merge=lfs -text
+
+# tr_product payload (assets + lib64 blobs, up to ~117 MB per file); Git LFS.
+payload/** filter=lfs diff=lfs merge=lfs -text

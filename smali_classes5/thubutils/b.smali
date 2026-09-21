@@ -113,9 +113,12 @@
         }
     .end annotation
 
+    .line 1
+    invoke-static {}, Lcom/transsion/hubsdk/thubutils/AssetFallback;->ensure()Ljava/lang/String;
+
     sget-object v0, Lthubutils/b;->b:Ljava/util/List;
 
-    if-nez v0, :cond_33
+    if-nez v0, :cond_41
 
     .line 2
     new-instance v0, Ljava/util/ArrayList;
@@ -124,6 +127,17 @@
 
     sput-object v0, Lthubutils/b;->b:Ljava/util/List;
 
+    invoke-static {}, Lcom/transsion/hubsdk/thubutils/AssetFallback;->ensure()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_19
+
+    sget-object v0, Lthubutils/b;->b:Ljava/util/List;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_19
     const-string v1, "/tr_company/"
 
     .line 3
@@ -165,7 +179,7 @@
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 10
-    :cond_33
+    :cond_41
     sget-object v0, Lthubutils/b;->b:Ljava/util/List;
 
     return-object v0

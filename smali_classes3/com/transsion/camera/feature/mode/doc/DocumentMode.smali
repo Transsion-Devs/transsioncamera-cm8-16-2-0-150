@@ -652,78 +652,57 @@
 .end method
 
 .method private readModel(Landroid/content/Context;)[B
-    .registers 3
+    .registers 6
 
-    .line 679
-    invoke-static {}, Lcom/transsion/camera/app/common/CommonConfigUtil;->getInstance()Lcom/transsion/camera/app/common/CommonConfigUtil;
+    const-string v0, "camasset/etc/asset/TranssionCamera/DocDetectV15.xbin"
 
-    move-result-object p0
-
-    iget-boolean p0, p0, Lcom/transsion/camera/app/common/CommonConfigUtil;->mTonesAssetSupport:Z
-
-    const-string v0, "DocDetectV15.xbin"
-
-    if-eqz p0, :cond_17
-
-    .line 680
-    invoke-static {}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getInstance()Lcom/transsion/camera/utils/manager/CamAssetManager;
-
-    move-result-object p0
-
-    invoke-virtual {p0, v0}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object p0
-
-    .line 681
-    invoke-static {p0}, Lcom/transsion/camera/utils/FileUtil;->getFileData(Ljava/io/File;)[B
-
-    move-result-object p0
-
-    return-object p0
-
-    .line 684
-    :cond_17
-    :try_start_17
+    :try_start_2
     invoke-virtual {p1}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
-    move-result-object p0
+    move-result-object v1
 
-    invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v1, v0}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
-    move-result-object p0
+    move-result-object v1
 
-    .line 685
-    invoke-virtual {p0}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
 
-    move-result p1
+    move-result v0
 
-    .line 686
-    invoke-static {p0, p1}, Lcom/transsion/camera/utils/FileUtil;->readStream(Ljava/io/InputStream;I)[B
+    invoke-static {v1, v0}, Lcom/transsion/camera/utils/FileUtil;->readStream(Ljava/io/InputStream;I)[B
 
-    move-result-object p0
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_17 .. :try_end_27} :catch_28
+    move-result-object v0
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_12} :catch_13
 
-    return-object p0
+    return-object v0
 
-    :catch_28
-    move-exception p0
+    :catch_13
+    move-exception v1
 
-    .line 688
-    sget-object p1, Lcom/transsion/camera/feature/mode/doc/DocumentMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
+    sget-object v2, Lcom/transsion/camera/feature/mode/doc/DocumentMode;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getInstance()Lcom/transsion/camera/utils/manager/CamAssetManager;
+
+    move-result-object v1
+
+    const-string v2, "DocDetectV15.xbin"
+
+    invoke-virtual {v1, v2}, Lcom/transsion/camera/utils/manager/CamAssetManager;->getAssetPath(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/transsion/camera/utils/FileUtil;->getFileData(Ljava/io/File;)[B
 
     move-result-object v0
 
-    invoke-static {p1, v0}, Lcom/transsion/camera/utils/debug/Log;->e(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
-
-    .line 689
-    invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
-
-    const/4 p0, 0x0
-
-    return-object p0
+    return-object v0
 .end method
 
 .method private resetTips()V

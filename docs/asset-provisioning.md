@@ -11,36 +11,60 @@ The stock firmware provisions TranssionCamera assets across three locations:
 | `tr_product/lib64/*.so` | `tr_product` partition | 47 libs |
 | `odm/etc/asset/camera/` | `odm` partition | 671 files |
 
-The app locates assets via `CamAssetManager.getAssetPath()` →
+The app locates partition assets via `CamAssetManager.getAssetPath()` →
 `TranConfigsManager.getAsset()` → `TranThubConfigs` / `TranAospConfigs`
 → `TranConfigs.getAsset()`, which probes partition-rooted paths.
 
-## Port layout (CM8 device tree)
+## Port model: self-contained APK
 
-This port has no `tr_product` partition. All 465 files are re-homed to
-`system_ext` via the device tree blob list (`proprietary-files.txt`):
+CM8 has no `tr_product` partition, and the camera is built with the in-tree
+overlay rather than relying on extra partition provisioning. The port instead
+embeds the full payload in the APK:
 
-The 47 `tr_product/lib64/*.so` are similarly re-mapped to `system_ext/lib64/`.
+- `payload/etc/asset/TranssionCamera/**` (ALL 465 files) →
+  `assets/camasset/etc/asset/TranssionCamera/**`
+- `payload/lib64/**` (ALL 47 libs) → `lib/arm64-v8a/**`
 
-`CamAssetManager` finds them unchanged because `TranConfigs` probes
-`system_ext/etc/asset/TranssionCamera/` as a valid asset root.
+`scripts/build_selfcontained.sh` assembles the APK from the stock base, the
+pinned `artifacts/` dex and `payload/`, and FAILS unless every one of the 465
+assets and 47 libs is present (exact-count self-containment check).
 
-## classes5 bridge (smali_classes5/)
+## Wiring (how the bundled payload resolves)
 
-The port injects a `classes5.dex` HubSDK bridge (16 files) into the APK.
-This bridge wires `TranConfigs` → `system_ext` probe. The probe root list
-(`thubutils/b.b()`) walks `/tr_company/`, `/tr_carrier/`, `/tr_region/`,
-`/tr_product/`, `/system_ext/`, `/tranfs/`, so provisioned assets under
-`/system_ext/etc/asset/TranssionCamera/` resolve directly. Assets are
-provided by the partition provisioning above — the APK embeds no asset
-payload, and there is no `AssetFallback` extraction class.
+Stock partition-based lookup cannot see the embedded payload. Three changes
+wire it:
+
+1. `AssetFallback` (new, `smali_classes5/com/transsion/hubsdk/thubutils/`)
+   - `ensure()`: resolves `sourceDir` (the running APK) and the extraction root
+     `/data/data/com.transsion.camera/files/apkasset/`.
+   - `extract()`: streams every `assets/camasset/**` zip entry
+     (16-char prefix stripped) to `apkasset/<relPath>`, once per install
+     (`apkasset/.done` marker), mirroring the partition layout.
+
+2. `thubutils/b.b()` (classes5): asset-root list. It now calls
+   `AssetFallback.ensure()` first and prepends `<files>/apkasset/` to the
+   partition roots (`/tr_product/`, `/system_ext/`, …), so the descriptor-
+   based `getAsset` chain can resolve bundled assets unchanged.
+
+3. `DocumentMode.readModel()` (classes3): primary path reads the model
+   directly from the APK's own assets via
+   `AssetManager.open("camasset/etc/asset/TranssionCamera/DocDetectV15.xbin")`
+   (zip entry `assets/camasset/etc/asset/TranssionCamera/DocDetectV15.xbin`),
+   logging and falling back to `CamAssetManager.getAssetPath("DocDetectV15.xbin")`
+   on failure.
+
+Known limitation: the `ITranConfigs.Instance()` shim (`thubutils/a`) falls
+back to a default `ITranConfigs$a` (all getters return null) when the system
+`thubutils.jar` is absent, so not every `CamAssetManager.getAssetPath()`
+call site resolves the bundled payload — `DocumentMode` is wired directly as
+the canonical consumer.
 
 ## Verification
 
 ```bash
-# Confirm all 465 tr_product assets are in blob list
-grep -c "tr_product/etc/asset/TranssionCamera" device/tecno/CM8/proprietary-files.txt
+# Reassemble the self-contained APK; asserts all 465 assets + 47 libs embed
+bash scripts/build_selfcontained.sh build/TranssionCamera_selfcontained.apk
 
-# Confirm all 47 libs are in blob list
-grep -c "tr_product/lib64" device/tecno/CM8/proprietary-files.txt
+# CountAssets embedded (465 payload files under assets/camasset + dir entries)
+unzip -Z1 build/TranssionCamera_selfcontained.apk | grep -c '^assets/camasset/'
 ```
