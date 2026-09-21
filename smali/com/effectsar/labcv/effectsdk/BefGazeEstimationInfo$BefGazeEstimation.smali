@@ -1,0 +1,172 @@
+.class public Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "BefGazeEstimation"
+.end annotation
+
+
+# instance fields
+.field faceId:J
+
+.field head_r:[F
+
+.field head_t:[F
+
+.field leye_gaze:[F
+
+.field leye_gaze_2d:[F
+
+.field leye_pos:[F
+
+.field leye_pos2d:[F
+
+.field mid_gaze:[F
+
+.field reye_gaze:[F
+
+.field reye_gaze2d:[F
+
+.field reye_pos:[F
+
+.field reye_pos2d:[F
+
+.field valid:Z
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 15
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getFaceId()J
+    .registers 3
+
+    .line 21
+    iget-wide v0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->faceId:J
+
+    return-wide v0
+.end method
+
+.method public getHead_r()[F
+    .registers 1
+
+    .line 29
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->head_r:[F
+
+    return-object p0
+.end method
+
+.method public getHead_t()[F
+    .registers 1
+
+    .line 33
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->head_t:[F
+
+    return-object p0
+.end method
+
+.method public getLeye_gaze()[F
+    .registers 1
+
+    .line 45
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->leye_gaze:[F
+
+    return-object p0
+.end method
+
+.method public getLeye_gaze_2d()[F
+    .registers 1
+
+    .line 65
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->leye_gaze_2d:[F
+
+    return-object p0
+.end method
+
+.method public getLeye_pos()[F
+    .registers 1
+
+    .line 37
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->leye_pos:[F
+
+    return-object p0
+.end method
+
+.method public getLeye_pos2d()[F
+    .registers 1
+
+    .line 57
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->leye_pos2d:[F
+
+    return-object p0
+.end method
+
+.method public getMid_gaze()[F
+    .registers 1
+
+    .line 53
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->mid_gaze:[F
+
+    return-object p0
+.end method
+
+.method public getReye_gaze()[F
+    .registers 1
+
+    .line 49
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->reye_gaze:[F
+
+    return-object p0
+.end method
+
+.method public getReye_gaze2d()[F
+    .registers 1
+
+    .line 69
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->reye_gaze2d:[F
+
+    return-object p0
+.end method
+
+.method public getReye_pos()[F
+    .registers 1
+
+    .line 41
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->reye_pos:[F
+
+    return-object p0
+.end method
+
+.method public getReye_pos2d()[F
+    .registers 1
+
+    .line 61
+    iget-object p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->reye_pos2d:[F
+
+    return-object p0
+.end method
+
+.method public isValid()Z
+    .registers 1
+
+    .line 25
+    iget-boolean p0, p0, Lcom/effectsar/labcv/effectsdk/BefGazeEstimationInfo$BefGazeEstimation;->valid:Z
+
+    return p0
+.end method

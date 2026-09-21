@@ -1,0 +1,56 @@
+.class public final synthetic Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/airbnb/lottie/value/SimpleLottieValueCallback;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
+
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:I
+
+.field public final synthetic f$3:Z
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;ZIZ)V
+    .registers 5
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
+
+    iput-boolean p2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$1:Z
+
+    iput p3, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$2:I
+
+    iput-boolean p4, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$3:Z
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getValue(Lcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Object;
+    .registers 5
+
+    .line 0
+    iget-object v0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$0:Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;
+
+    iget-boolean v1, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$1:Z
+
+    iget v2, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$2:I
+
+    iget-boolean p0, p0, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI$$ExternalSyntheticLambda10;->f$3:Z
+
+    invoke-static {v0, v1, v2, p0, p1}, Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;->$r8$lambda$BQZwd30GmKnOEdhrPv7wkECUGos(Lcom/transsion/camera/app/common/ui/setting/TopBarItemUI;ZIZLcom/airbnb/lottie/value/LottieFrameInfo;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method

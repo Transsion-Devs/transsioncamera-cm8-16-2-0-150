@@ -1,0 +1,54 @@
+.class public Lcom/gallery20/sdk/ai_art/network/bean/ProcessResultBean;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/gallery20/sdk/ai_art/network/bean/ProcessResultBean$DataBean;
+    }
+.end annotation
+
+
+# instance fields
+.field public code:Ljava/lang/Integer;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "code"
+    .end annotation
+.end field
+
+.field public data:Lcom/gallery20/sdk/ai_art/network/bean/ProcessResultBean$DataBean;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "data"
+    .end annotation
+.end field
+
+.field public errorCode:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "error_code"
+    .end annotation
+.end field
+
+.field public success:Z
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "success"
+    .end annotation
+.end field
+
+.field public transitServiceStatus:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        value = "transitServiceStatus"
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .registers 1
+
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

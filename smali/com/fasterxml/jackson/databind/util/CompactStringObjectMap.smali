@@ -1,0 +1,476 @@
+.class public final Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field private static final EMPTY:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+
+
+# instance fields
+.field private final _hashArea:[Ljava/lang/Object;
+
+.field private final _hashMask:I
+
+.field private final _spillCount:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 4
+
+    .line 25
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+
+    const/4 v1, 0x4
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;-><init>(II[Ljava/lang/Object;)V
+
+    sput-object v0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->EMPTY:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+
+    return-void
+.end method
+
+.method private constructor <init>(II[Ljava/lang/Object;)V
+    .registers 4
+
+    .line 33
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 34
+    iput p1, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashMask:I
+
+    .line 35
+    iput p2, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_spillCount:I
+
+    .line 36
+    iput-object p3, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method private final _find2(Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/Object;
+    .registers 7
+
+    const/4 v0, 0x0
+
+    if-nez p3, :cond_4
+
+    return-object v0
+
+    .line 114
+    :cond_4
+    iget p3, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashMask:I
+
+    add-int/lit8 p3, p3, 0x1
+
+    shr-int/lit8 p2, p2, 0x1
+
+    add-int/2addr p2, p3
+
+    shl-int/lit8 p2, p2, 0x1
+
+    .line 116
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    aget-object v1, v1, p2
+
+    .line 117
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1e
+
+    .line 118
+    iget-object p0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    add-int/lit8 p2, p2, 0x1
+
+    aget-object p0, p0, p2
+
+    return-object p0
+
+    :cond_1e
+    if-eqz v1, :cond_41
+
+    shr-int/lit8 p2, p3, 0x1
+
+    add-int/2addr p3, p2
+
+    shl-int/lit8 p2, p3, 0x1
+
+    .line 122
+    iget p3, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_spillCount:I
+
+    add-int/2addr p3, p2
+
+    :goto_28
+    if-ge p2, p3, :cond_41
+
+    .line 123
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    aget-object v1, v1, p2
+
+    if-eq v1, p1, :cond_3a
+
+    .line 124
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_37
+
+    goto :goto_3a
+
+    :cond_37
+    add-int/lit8 p2, p2, 0x2
+
+    goto :goto_28
+
+    .line 125
+    :cond_3a
+    :goto_3a
+    iget-object p0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    add-int/lit8 p2, p2, 0x1
+
+    aget-object p0, p0, p2
+
+    return-object p0
+
+    :cond_41
+    return-object v0
+.end method
+
+.method public static construct(Ljava/util/Map;)Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+    .registers 11
+
+    .line 41
+    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    .line 42
+    sget-object p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->EMPTY:Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+
+    return-object p0
+
+    .line 46
+    :cond_9
+    invoke-interface {p0}, Ljava/util/Map;->size()I
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->findSize(I)I
+
+    move-result v0
+
+    add-int/lit8 v1, v0, -0x1
+
+    shr-int/lit8 v2, v0, 0x1
+
+    add-int/2addr v2, v0
+
+    mul-int/lit8 v3, v2, 0x2
+
+    .line 50
+    new-array v3, v3, [Ljava/lang/Object;
+
+    .line 53
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    const/4 v4, 0x0
+
+    :goto_23
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_67
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Ljava/util/Map$Entry;
+
+    .line 54
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    if-nez v6, :cond_38
+
+    goto :goto_23
+
+    .line 61
+    :cond_38
+    invoke-virtual {v6}, Ljava/lang/String;->hashCode()I
+
+    move-result v7
+
+    and-int/2addr v7, v1
+
+    add-int v8, v7, v7
+
+    .line 65
+    aget-object v9, v3, v8
+
+    if-eqz v9, :cond_5c
+
+    shr-int/lit8 v7, v7, 0x1
+
+    add-int/2addr v7, v0
+
+    shl-int/lit8 v8, v7, 0x1
+
+    .line 68
+    aget-object v7, v3, v8
+
+    if-eqz v7, :cond_5c
+
+    shl-int/lit8 v7, v2, 0x1
+
+    add-int v8, v7, v4
+
+    add-int/lit8 v4, v4, 0x2
+
+    .line 72
+    array-length v7, v3
+
+    if-lt v8, v7, :cond_5c
+
+    .line 73
+    array-length v7, v3
+
+    add-int/lit8 v7, v7, 0x4
+
+    invoke-static {v3, v7}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
+    move-result-object v3
+
+    .line 77
+    :cond_5c
+    aput-object v6, v3, v8
+
+    add-int/lit8 v8, v8, 0x1
+
+    .line 78
+    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v5
+
+    aput-object v5, v3, v8
+
+    goto :goto_23
+
+    .line 80
+    :cond_67
+    new-instance p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;
+
+    invoke-direct {p0, v1, v4, v3}, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;-><init>(II[Ljava/lang/Object;)V
+
+    return-object p0
+.end method
+
+.method private static final findSize(I)I
+    .registers 2
+
+    const/4 v0, 0x5
+
+    if-gt p0, v0, :cond_6
+
+    const/16 p0, 0x8
+
+    return p0
+
+    :cond_6
+    const/16 v0, 0xc
+
+    if-gt p0, v0, :cond_d
+
+    const/16 p0, 0x10
+
+    return p0
+
+    :cond_d
+    shr-int/lit8 v0, p0, 0x2
+
+    add-int/2addr p0, v0
+
+    const/16 v0, 0x20
+
+    :goto_12
+    if-ge v0, p0, :cond_16
+
+    add-int/2addr v0, v0
+
+    goto :goto_12
+
+    :cond_16
+    return v0
+.end method
+
+
+# virtual methods
+.method public find(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 6
+
+    .line 100
+    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
+
+    move-result v0
+
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashMask:I
+
+    and-int/2addr v0, v1
+
+    shl-int/lit8 v1, v0, 0x1
+
+    .line 102
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    aget-object v2, v2, v1
+
+    if-eq v2, p1, :cond_1b
+
+    .line 103
+    invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_16
+
+    goto :goto_1b
+
+    .line 106
+    :cond_16
+    invoke-direct {p0, p1, v0, v2}, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_find2(Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 104
+    :cond_1b
+    :goto_1b
+    iget-object p0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, 0x1
+
+    aget-object p0, p0, v1
+
+    return-object p0
+.end method
+
+.method public findCaseInsensitive(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 5
+
+    .line 134
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    array-length v0, v0
+
+    const/4 v1, 0x0
+
+    :goto_4
+    if-ge v1, v0, :cond_1e
+
+    .line 135
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    aget-object v2, v2, v1
+
+    if-eqz v2, :cond_1b
+
+    .line 137
+    check-cast v2, Ljava/lang/String;
+
+    .line 138
+    invoke-virtual {v2, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1b
+
+    .line 139
+    iget-object p0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    add-int/lit8 v1, v1, 0x1
+
+    aget-object p0, p0, v1
+
+    return-object p0
+
+    :cond_1b
+    add-int/lit8 v1, v1, 0x2
+
+    goto :goto_4
+
+    :cond_1e
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public keys()Ljava/util/List;
+    .registers 5
+
+    .line 147
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    array-length v0, v0
+
+    .line 148
+    new-instance v1, Ljava/util/ArrayList;
+
+    shr-int/lit8 v2, v0, 0x2
+
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    const/4 v2, 0x0
+
+    :goto_b
+    if-ge v2, v0, :cond_1b
+
+    .line 150
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/CompactStringObjectMap;->_hashArea:[Ljava/lang/Object;
+
+    aget-object v3, v3, v2
+
+    if-eqz v3, :cond_18
+
+    .line 152
+    check-cast v3, Ljava/lang/String;
+
+    invoke-interface {v1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    :cond_18
+    add-int/lit8 v2, v2, 0x2
+
+    goto :goto_b
+
+    :cond_1b
+    return-object v1
+.end method

@@ -1,0 +1,105 @@
+.class Lcom/transsion/widgetslib/widget/FootOperationBar$MyOnPreDrawListener;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/transsion/widgetslib/widget/FootOperationBar;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "MyOnPreDrawListener"
+.end annotation
+
+
+# instance fields
+.field private final mFootOperationBar:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference<",
+            "Lcom/transsion/widgetslib/widget/FootOperationBar;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method constructor <init>(Lcom/transsion/widgetslib/widget/FootOperationBar;)V
+    .registers 3
+
+    .line 244
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 245
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Lcom/transsion/widgetslib/widget/FootOperationBar$MyOnPreDrawListener;->mFootOperationBar:Ljava/lang/ref/WeakReference;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onPreDraw()Z
+    .registers 3
+
+    .line 250
+    iget-object v0, p0, Lcom/transsion/widgetslib/widget/FootOperationBar$MyOnPreDrawListener;->mFootOperationBar:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/transsion/widgetslib/widget/FootOperationBar;
+
+    if-eqz v0, :cond_29
+
+    .line 252
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+
+    const/16 p0, 0x8
+
+    .line 254
+    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 255
+    # getter for: Lcom/transsion/widgetslib/widget/FootOperationBar;->mInitShow:Z
+    invoke-static {v0}, Lcom/transsion/widgetslib/widget/FootOperationBar;->access$100(Lcom/transsion/widgetslib/widget/FootOperationBar;)Z
+
+    move-result p0
+
+    if-nez p0, :cond_22
+
+    # getter for: Lcom/transsion/widgetslib/widget/FootOperationBar;->mShow:Z
+    invoke-static {v0}, Lcom/transsion/widgetslib/widget/FootOperationBar;->access$200(Lcom/transsion/widgetslib/widget/FootOperationBar;)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_29
+
+    :cond_22
+    const/4 p0, 0x0
+
+    .line 256
+    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 257
+    invoke-virtual {v0}, Lcom/transsion/widgetslib/widget/FootOperationBar;->openFootOperationBar()V
+
+    :cond_29
+    const/4 p0, 0x1
+
+    return p0
+.end method

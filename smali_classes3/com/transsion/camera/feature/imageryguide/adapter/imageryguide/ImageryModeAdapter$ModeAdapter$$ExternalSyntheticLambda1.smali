@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter$$ExternalSyntheticLambda1;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter$$ExternalSyntheticLambda1;->f$0:Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .registers 2
+
+    .line 0
+    iget-object p0, p0, Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter$$ExternalSyntheticLambda1;->f$0:Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;
+
+    invoke-static {p0, p1}, Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;->$r8$lambda$T1rY_5Ntq60cZ_XynRA4VLjKJUE(Lcom/transsion/camera/feature/imageryguide/adapter/imageryguide/ImageryModeAdapter$ModeAdapter;Landroid/view/View;)V
+
+    return-void
+.end method

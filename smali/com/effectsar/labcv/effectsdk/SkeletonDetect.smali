@@ -1,0 +1,345 @@
+.class public Lcom/effectsar/labcv/effectsdk/SkeletonDetect;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field private final MaxSkeletonNum:I
+
+.field private volatile mInited:Z
+
+.field private mNativePtr:J
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 28
+    :try_start_0
+    const-string v0, "effect"
+
+    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    :try_end_5
+    .catch Ljava/lang/UnsatisfiedLinkError; {:try_start_0 .. :try_end_5} :catch_6
+
+    return-void
+
+    :catch_6
+    move-exception v0
+
+    .line 30
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .registers 2
+
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 19
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    const/4 v0, 0x1
+
+    .line 24
+    iput v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->MaxSkeletonNum:I
+
+    return-void
+.end method
+
+.method private native nativeCheckLicense(Landroid/content/Context;Ljava/lang/String;Z)I
+.end method
+
+.method private native nativeDetect(Ljava/nio/ByteBuffer;IIIIILcom/effectsar/labcv/effectsdk/BefSkeletonInfo;)I
+.end method
+
+.method private native nativeDetectImageMode(Ljava/nio/ByteBuffer;IIIIILcom/effectsar/labcv/effectsdk/BefSkeletonInfo;)I
+.end method
+
+.method private native nativeInit(Ljava/lang/String;)I
+.end method
+
+.method private native nativeRelease()V
+.end method
+
+.method private native nativeSetDetectionInput(II)I
+.end method
+
+.method private native nativeSetTrackingInput(II)I
+.end method
+
+.method private native nativeTargetNum(I)I
+.end method
+
+
+# virtual methods
+.method public detectSkeleton(Ljava/nio/ByteBuffer;Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$PixlFormat;IIILcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$Rotation;)Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;
+    .registers 16
+
+    .line 95
+    iget-boolean v1, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    const/4 v8, 0x0
+
+    if-nez v1, :cond_6
+
+    return-object v8
+
+    .line 99
+    :cond_6
+    new-instance v7, Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;
+
+    invoke-direct {v7}, Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;-><init>()V
+
+    .line 100
+    invoke-virtual {p2}, Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$PixlFormat;->getValue()I
+
+    move-result v2
+
+    iget v6, p6, Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$Rotation;->id:I
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    invoke-direct/range {v0 .. v7}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeDetect(Ljava/nio/ByteBuffer;IIIIILcom/effectsar/labcv/effectsdk/BefSkeletonInfo;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    .line 103
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "nativeDetect return "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "bef_effect_ai"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v8
+
+    :cond_33
+    return-object v7
+.end method
+
+.method public detectSkeletonImageMode(Ljava/nio/ByteBuffer;Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$PixlFormat;IIILcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$Rotation;)Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;
+    .registers 16
+
+    .line 111
+    iget-boolean v1, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    const/4 v8, 0x0
+
+    if-nez v1, :cond_6
+
+    return-object v8
+
+    .line 115
+    :cond_6
+    new-instance v7, Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;
+
+    invoke-direct {v7}, Lcom/effectsar/labcv/effectsdk/BefSkeletonInfo;-><init>()V
+
+    .line 116
+    invoke-virtual {p2}, Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$PixlFormat;->getValue()I
+
+    move-result v2
+
+    iget v6, p6, Lcom/effectsar/labcv/effectsdk/EffectsSDKEffectConstants$Rotation;->id:I
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v3, p3
+
+    move v4, p4
+
+    move v5, p5
+
+    invoke-direct/range {v0 .. v7}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeDetectImageMode(Ljava/nio/ByteBuffer;IIIIILcom/effectsar/labcv/effectsdk/BefSkeletonInfo;)I
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    .line 119
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "nativeDetect return "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "bef_effect_ai"
+
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v8
+
+    :cond_33
+    return-object v7
+.end method
+
+.method public init(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
+    .registers 5
+
+    const/4 v0, 0x0
+
+    .line 70
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->init(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Z)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public init(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Z)I
+    .registers 6
+
+    .line 44
+    invoke-direct {p0, p2}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeInit(Ljava/lang/String;)I
+
+    move-result p2
+
+    const/4 v0, 0x0
+
+    if-eqz p2, :cond_a
+
+    .line 46
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return p2
+
+    :cond_a
+    if-eqz p2, :cond_e
+
+    .line 50
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    .line 53
+    :cond_e
+    invoke-direct {p0, p1, p3, p4}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeCheckLicense(Landroid/content/Context;Ljava/lang/String;Z)I
+
+    move-result p1
+
+    if-eqz p1, :cond_17
+
+    .line 55
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return p1
+
+    :cond_17
+    const/4 p1, 0x1
+
+    .line 59
+    invoke-direct {p0, p1}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeTargetNum(I)I
+
+    move-result p2
+
+    if-eqz p2, :cond_21
+
+    .line 61
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return p2
+
+    .line 65
+    :cond_21
+    iput-boolean p1, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return p2
+.end method
+
+.method public isInited()Z
+    .registers 1
+
+    .line 79
+    iget-boolean p0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return p0
+.end method
+
+.method public release()V
+    .registers 2
+
+    .line 141
+    iget-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    if-eqz v0, :cond_7
+
+    .line 142
+    invoke-direct {p0}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeRelease()V
+
+    :cond_7
+    const/4 v0, 0x0
+
+    .line 144
+    iput-boolean v0, p0, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->mInited:Z
+
+    return-void
+.end method
+
+.method public setDetectionInput(II)I
+    .registers 3
+
+    .line 159
+    invoke-direct {p0, p1, p2}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeSetDetectionInput(II)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public setTargetNum(I)I
+    .registers 2
+
+    .line 133
+    invoke-direct {p0, p1}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeTargetNum(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public setTrackingInput(II)I
+    .registers 3
+
+    .line 174
+    invoke-direct {p0, p1, p2}, Lcom/effectsar/labcv/effectsdk/SkeletonDetect;->nativeSetTrackingInput(II)I
+
+    move-result p0
+
+    return p0
+.end method

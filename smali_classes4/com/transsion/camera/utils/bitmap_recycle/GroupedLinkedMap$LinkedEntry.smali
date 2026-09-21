@@ -1,0 +1,127 @@
+.class Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "LinkedEntry"
+.end annotation
+
+
+# instance fields
+.field final key:Ljava/lang/Object;
+
+.field next:Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;
+
+.field prev:Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;
+
+.field private values:Ljava/util/List;
+
+
+# direct methods
+.method constructor <init>()V
+    .registers 2
+
+    const/4 v0, 0x0
+
+    .line 131
+    invoke-direct {p0, v0}, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;-><init>(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method constructor <init>(Ljava/lang/Object;)V
+    .registers 2
+
+    .line 134
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 135
+    iput-object p0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->prev:Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;
+
+    iput-object p0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->next:Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;
+
+    .line 136
+    iput-object p1, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->key:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public add(Ljava/lang/Object;)V
+    .registers 3
+
+    .line 150
+    iget-object v0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->values:Ljava/util/List;
+
+    if-nez v0, :cond_b
+
+    .line 151
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->values:Ljava/util/List;
+
+    .line 153
+    :cond_b
+    iget-object p0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->values:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method public removeLast()Ljava/lang/Object;
+    .registers 2
+
+    .line 141
+    invoke-virtual {p0}, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_f
+
+    .line 142
+    iget-object p0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->values:Ljava/util/List;
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_f
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public size()I
+    .registers 1
+
+    .line 146
+    iget-object p0, p0, Lcom/transsion/camera/utils/bitmap_recycle/GroupedLinkedMap$LinkedEntry;->values:Ljava/util/List;
+
+    if-eqz p0, :cond_9
+
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    move-result p0
+
+    return p0
+
+    :cond_9
+    const/4 p0, 0x0
+
+    return p0
+.end method

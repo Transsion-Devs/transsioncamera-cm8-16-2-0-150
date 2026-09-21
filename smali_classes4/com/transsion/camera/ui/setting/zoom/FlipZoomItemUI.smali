@@ -1,0 +1,14 @@
+.class public Lcom/transsion/camera/ui/setting/zoom/FlipZoomItemUI;
+.super Lcom/transsion/camera/ui/setting/zoom/BaseFlipZoomItemUI;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;Landroid/content/res/Resources;)V
+    .registers 3
+
+    .line 10
+    invoke-direct {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/BaseFlipZoomItemUI;-><init>(Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;Landroid/content/res/Resources;)V
+
+    return-void
+.end method

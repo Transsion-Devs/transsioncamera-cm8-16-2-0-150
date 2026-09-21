@@ -1,0 +1,36 @@
+.class public final synthetic Lcom/transsion/camera/ui/setting/zoom/ZoomUI$$ExternalSyntheticLambda2;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+# interfaces
+.implements Lcom/transsion/camera/app/ui/widget/GraduationView$OnProgressChangeListener;
+
+
+# instance fields
+.field public final synthetic f$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;)V
+    .registers 2
+
+    .line 0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onProgressChanged(IZ)V
+    .registers 3
+
+    .line 0
+    iget-object p0, p0, Lcom/transsion/camera/ui/setting/zoom/ZoomUI$$ExternalSyntheticLambda2;->f$0:Lcom/transsion/camera/ui/setting/zoom/ZoomUI;
+
+    invoke-static {p0, p1, p2}, Lcom/transsion/camera/ui/setting/zoom/ZoomUI;->$r8$lambda$HJ2QuC_HUuoA1dTAljDdridEBQo(Lcom/transsion/camera/ui/setting/zoom/ZoomUI;IZ)V
+
+    return-void
+.end method

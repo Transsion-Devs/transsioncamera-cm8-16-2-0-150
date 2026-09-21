@@ -1,0 +1,14 @@
+.class public abstract Landroidx/appcompat/widget/TooltipCompat;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public static setTooltipText(Landroid/view/View;Ljava/lang/CharSequence;)V
+    .registers 2
+
+    .line 42
+    invoke-virtual {p0, p1}, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
+
+    return-void
+.end method

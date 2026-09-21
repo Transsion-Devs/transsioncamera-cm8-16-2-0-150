@@ -1,0 +1,42 @@
+.class abstract Lcom/transsion/nvstream/NVStreamAlgorithm$InstanceHolder;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/transsion/nvstream/NVStreamAlgorithm;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0xa
+    name = "InstanceHolder"
+.end annotation
+
+
+# static fields
+.field private static final INSTANCE:Lcom/transsion/nvstream/NVStreamAlgorithm;
+
+
+# direct methods
+.method static bridge synthetic -$$Nest$sfgetINSTANCE()Lcom/transsion/nvstream/NVStreamAlgorithm;
+    .registers 1
+
+    .line 0
+    sget-object v0, Lcom/transsion/nvstream/NVStreamAlgorithm$InstanceHolder;->INSTANCE:Lcom/transsion/nvstream/NVStreamAlgorithm;
+
+    return-object v0
+.end method
+
+.method static constructor <clinit>()V
+    .registers 1
+
+    .line 19
+    new-instance v0, Lcom/transsion/nvstream/NVStreamAlgorithm;
+
+    invoke-direct {v0}, Lcom/transsion/nvstream/NVStreamAlgorithm;-><init>()V
+
+    sput-object v0, Lcom/transsion/nvstream/NVStreamAlgorithm$InstanceHolder;->INSTANCE:Lcom/transsion/nvstream/NVStreamAlgorithm;
+
+    return-void
+.end method

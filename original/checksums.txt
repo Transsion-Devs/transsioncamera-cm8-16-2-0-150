@@ -1,0 +1,18 @@
+# TranssionCamera stock APK (16.2.0.150) — original extraction, untouched.
+#
+# SOURCE: stock firmware tree /home/murimi14/cm8-16.2.0.150/
+#   system_ext/app/TranssionCamera/TranssionCamera.apk
+#   tr_product/etc/asset/TranssionCamera/          (465 asset files, NOT in APK;
+#                                                   provisioned via device tree
+#                                                   blob list, see docs/asset-provisioning.md)
+#   tr_product/lib64/                              (47 native libs, same split)
+#
+# The smali trees (smali/..smali_classes4/) are baksmali of the four dex
+# inside this APK and MUST reassemble back to the md5s below.
+f8608d4df462bbc2942f02469a739809  classes.dex     (smali/)
+bf9cb11b57ba887b46fd95be049d2192  classes2.dex    (smali_classes2/)
+067ed1c5e2285bddd7108bd537fa9464  classes3.dex    (smali_classes3/)
+6483fa544c118b690e7712b498568540  classes4.dex    (smali_classes4/)
+# APK itself
+4fbbf9fa06c02a67752e0966331ec08c  original/TranssionCamera.apk   (md5)
+47782b224c4e510d3072b40ff907c053c94cf163fa6477a98d0b39c6655ef860  original/TranssionCamera.apk  (sha256)

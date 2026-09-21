@@ -1,0 +1,142 @@
+.class public Lcom/transsion/camera/ui/setting/supernightstable/SuperNightStablePopSettingUISpec;
+.super Lcom/transsion/camera/app/ui/setting/spec/ListSettingUISpec;
+.source "SourceFile"
+
+
+# direct methods
+.method public constructor <init>(Landroid/content/res/Resources;)V
+    .registers 3
+
+    .line 19
+    const-string v0, "key_super_night_stable"
+
+    invoke-direct {p0, v0, p1}, Lcom/transsion/camera/app/ui/setting/spec/ListSettingUISpec;-><init>(Ljava/lang/String;Landroid/content/res/Resources;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected initEntries(Landroid/content/res/Resources;)[Ljava/lang/String;
+    .registers 2
+
+    .line 38
+    sget p0, Lcom/transsion/camera/R$array;->super_night_stable_setting_entries:I
+
+    invoke-virtual {p1, p0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method protected initEntryDrawables(Landroid/content/res/Resources;)Landroid/content/res/TypedArray;
+    .registers 2
+
+    .line 48
+    sget p0, Lcom/transsion/camera/R$array;->super_night_stable_pop_setting_entry_drawables:I
+
+    invoke-virtual {p1, p0}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method protected initEntryValues(Landroid/content/res/Resources;)[Ljava/lang/String;
+    .registers 2
+
+    .line 43
+    sget p0, Lcom/transsion/camera/R$array;->super_night_stable_pop_setting_entry_values:I
+
+    invoke-virtual {p1, p0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method protected initIcon(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    .registers 3
+
+    .line 33
+    sget p0, Lcom/transsion/camera/R$drawable;->ic_super_night_stable:I
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, p0, v0}, Landroid/content/res/Resources;->getDrawable(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method protected initTitle(Landroid/content/res/Resources;)Ljava/lang/String;
+    .registers 2
+
+    .line 24
+    invoke-static {}, Lcom/transsion/camera/utils/CustomConfigUtil;->getInstance()Lcom/transsion/camera/utils/CustomConfigUtil;
+
+    move-result-object p0
+
+    iget-boolean p0, p0, Lcom/transsion/camera/utils/CustomConfigUtil;->mSuperNightStableDefaultOpen:Z
+
+    if-eqz p0, :cond_f
+
+    .line 25
+    sget p0, Lcom/transsion/camera/feature/supernight/R$string;->super_night_stable_enter_tips:I
+
+    invoke-virtual {p1, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 27
+    :cond_f
+    sget p0, Lcom/transsion/camera/R$string;->super_night_stable_setting_title:I
+
+    invoke-virtual {p1, p0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public shouldHighLightShow(Ljava/lang/String;)Z
+    .registers 3
+
+    .line 53
+    const-string v0, "on"
+
+    invoke-static {v0, p1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    const/4 p0, 0x1
+
+    return p0
+
+    .line 56
+    :cond_a
+    invoke-super {p0, p1}, Lcom/transsion/camera/app/common/ui/setting/SettingUISpec;->shouldHighLightShow(Ljava/lang/String;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public shouldUpdateTint(Ljava/lang/String;)Z
+    .registers 2
+
+    .line 61
+    const-string p0, "off"
+
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    return p0
+.end method

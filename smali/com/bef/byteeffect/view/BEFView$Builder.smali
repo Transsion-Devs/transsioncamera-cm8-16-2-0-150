@@ -1,0 +1,269 @@
+.class public final Lcom/bef/byteeffect/view/BEFView$Builder;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# annotations
+.annotation build Lcom/byteamazing/annotation/EffectKeep;
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/bef/byteeffect/view/BEFView;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "Builder"
+.end annotation
+
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+    }
+.end annotation
+
+
+# instance fields
+.field private mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+
+# direct methods
+.method private constructor <init>()V
+    .registers 3
+
+    .line 72
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    new-instance v0, Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;-><init>(Lcom/bef/byteeffect/view/BEFView$Builder;Lcom/bef/byteeffect/view/BEFView$1;)V
+
+    iput-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    return-void
+.end method
+
+.method public static obtain()Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 4
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 76
+    new-instance v0, Lcom/bef/byteeffect/view/BEFView$Builder;
+
+    invoke-direct {v0}, Lcom/bef/byteeffect/view/BEFView$Builder;-><init>()V
+
+    .line 77
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const/16 v2, 0x2d0
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mRenderWidth:I
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$102(Lcom/bef/byteeffect/view/BEFView$Builder$Params;I)I
+
+    .line 78
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const/16 v2, 0x500
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mRenderHeight:I
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$202(Lcom/bef/byteeffect/view/BEFView$Builder$Params;I)I
+
+    .line 79
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const-wide/high16 v2, 0x403e000000000000L    # 30.0
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mFPS:D
+    invoke-static {v1, v2, v3}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$302(Lcom/bef/byteeffect/view/BEFView$Builder$Params;D)D
+
+    .line 80
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    sget-object v2, Lcom/bef/byteeffect/view/BEFView$FitMode;->FILL_SCREEN:Lcom/bef/byteeffect/view/BEFView$FitMode;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mFitMode:Lcom/bef/byteeffect/view/BEFView$FitMode;
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$402(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/view/BEFView$FitMode;)Lcom/bef/byteeffect/view/BEFView$FitMode;
+
+    .line 81
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const/4 v2, 0x0
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mResourceFinder:Lcom/bef/byteeffect/ResourceFinder;
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$502(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/ResourceFinder;)Lcom/bef/byteeffect/ResourceFinder;
+
+    .line 82
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    sget-object v2, Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;->SHOOT:Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mSceneKey:Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$602(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;)Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;
+
+    .line 83
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    const/4 v2, 0x0
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mNeglectTouchEvent:Z
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$702(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Z)Z
+
+    .line 84
+    iget-object v1, v0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mKeepStatusAtPause:Z
+    invoke-static {v1, v2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$802(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Z)Z
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public build(Landroid/content/Context;)Lcom/bef/byteeffect/view/BEFView;
+    .registers 4
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 91
+    new-instance v0, Lcom/bef/byteeffect/view/BEFView;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, v1}, Lcom/bef/byteeffect/view/BEFView;-><init>(Landroid/content/Context;Lcom/bef/byteeffect/view/BEFView$1;)V
+
+    .line 92
+    iget-object p0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # invokes: Lcom/bef/byteeffect/view/BEFView;->setParams(Lcom/bef/byteeffect/view/BEFView$Builder$Params;)V
+    invoke-static {v0, p0}, Lcom/bef/byteeffect/view/BEFView;->access$1000(Lcom/bef/byteeffect/view/BEFView;Lcom/bef/byteeffect/view/BEFView$Builder$Params;)V
+
+    return-object v0
+.end method
+
+.method public build(Landroid/content/Context;Landroid/util/AttributeSet;)Lcom/bef/byteeffect/view/BEFView;
+    .registers 5
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 99
+    new-instance v0, Lcom/bef/byteeffect/view/BEFView;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p1, p2, v1}, Lcom/bef/byteeffect/view/BEFView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;Lcom/bef/byteeffect/view/BEFView$1;)V
+
+    .line 100
+    iget-object p0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # invokes: Lcom/bef/byteeffect/view/BEFView;->setParams(Lcom/bef/byteeffect/view/BEFView$Builder$Params;)V
+    invoke-static {v0, p0}, Lcom/bef/byteeffect/view/BEFView;->access$1000(Lcom/bef/byteeffect/view/BEFView;Lcom/bef/byteeffect/view/BEFView$Builder$Params;)V
+
+    return-object v0
+.end method
+
+.method public setFPS(D)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 4
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 114
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mFPS:D
+    invoke-static {v0, p1, p2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$302(Lcom/bef/byteeffect/view/BEFView$Builder$Params;D)D
+
+    return-object p0
+.end method
+
+.method public setFitMode(Lcom/bef/byteeffect/view/BEFView$FitMode;)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 3
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 120
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mFitMode:Lcom/bef/byteeffect/view/BEFView$FitMode;
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$402(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/view/BEFView$FitMode;)Lcom/bef/byteeffect/view/BEFView$FitMode;
+
+    return-object p0
+.end method
+
+.method public setKeepStatusAtPause(Z)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 3
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 144
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mKeepStatusAtPause:Z
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$802(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Z)Z
+
+    return-object p0
+.end method
+
+.method public setNeglectTouchEvent(Z)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 3
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 138
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mNeglectTouchEvent:Z
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$702(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Z)Z
+
+    return-object p0
+.end method
+
+.method public setRenderSize(II)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 4
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 107
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mRenderWidth:I
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$102(Lcom/bef/byteeffect/view/BEFView$Builder$Params;I)I
+
+    .line 108
+    iget-object p1, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mRenderHeight:I
+    invoke-static {p1, p2}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$202(Lcom/bef/byteeffect/view/BEFView$Builder$Params;I)I
+
+    return-object p0
+.end method
+
+.method public setResourceFinder(Lcom/bef/byteeffect/ResourceFinder;)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 3
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 126
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mResourceFinder:Lcom/bef/byteeffect/ResourceFinder;
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$502(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/ResourceFinder;)Lcom/bef/byteeffect/ResourceFinder;
+
+    return-object p0
+.end method
+
+.method public setSceneKey(Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;)Lcom/bef/byteeffect/view/BEFView$Builder;
+    .registers 3
+    .annotation build Lcom/byteamazing/annotation/EffectKeep;
+    .end annotation
+
+    .line 132
+    iget-object v0, p0, Lcom/bef/byteeffect/view/BEFView$Builder;->mParams:Lcom/bef/byteeffect/view/BEFView$Builder$Params;
+
+    # setter for: Lcom/bef/byteeffect/view/BEFView$Builder$Params;->mSceneKey:Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;
+    invoke-static {v0, p1}, Lcom/bef/byteeffect/view/BEFView$Builder$Params;->access$602(Lcom/bef/byteeffect/view/BEFView$Builder$Params;Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;)Lcom/bef/byteeffect/view/BEFView$BEFViewSceneKey;
+
+    return-object p0
+.end method
