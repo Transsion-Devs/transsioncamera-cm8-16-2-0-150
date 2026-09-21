@@ -1291,13 +1291,15 @@
     .registers 6
 
     .line 114
+    const/4 v1, 0x0
+
+    if-eqz p0, :cond_10
+
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    const/4 v1, 0x0
-
-    if-nez v0, :cond_f
+    if-nez v0, :cond_11
 
     .line 115
     sget-object p0, Lcom/transsion/camera/utils/FileUtil;->TAG:Lcom/transsion/camera/utils/debug/Log$Tag;
@@ -1306,125 +1308,126 @@
 
     invoke-static {p0, v0}, Lcom/transsion/camera/utils/debug/Log;->d(Lcom/transsion/camera/utils/debug/Log$Tag;Ljava/lang/String;)V
 
+    :cond_10
     return-object v1
 
     .line 118
-    :cond_f
-    :try_start_f
+    :cond_11
+    :try_start_11
     new-instance v0, Ljava/io/FileInputStream;
 
     invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_14
-    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_14} :catch_36
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_16} :catch_38
 
     .line 119
-    :try_start_14
+    :try_start_16
     new-instance p0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {p0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-    :try_end_19
-    .catchall {:try_start_14 .. :try_end_19} :catchall_38
+    :try_end_1b
+    .catchall {:try_start_16 .. :try_end_1b} :catchall_3a
 
     const/16 v2, 0x1000
 
     .line 120
-    :try_start_1b
+    :try_start_1d
     new-array v2, v2, [B
 
     .line 122
-    :goto_1d
+    :goto_1f
     invoke-virtual {v0, v2}, Ljava/io/InputStream;->read([B)I
 
     move-result v3
 
     const/4 v4, -0x1
 
-    if-eq v3, v4, :cond_2b
+    if-eq v3, v4, :cond_2d
 
     const/4 v4, 0x0
 
     .line 123
     invoke-virtual {p0, v2, v4, v3}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
-    goto :goto_1d
+    goto :goto_1f
 
-    :catchall_29
+    :catchall_2b
     move-exception v2
 
-    goto :goto_3a
+    goto :goto_3c
 
     .line 125
-    :cond_2b
+    :cond_2d
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v2
-    :try_end_2f
-    .catchall {:try_start_1b .. :try_end_2f} :catchall_29
+    :try_end_31
+    .catchall {:try_start_1d .. :try_end_31} :catchall_2b
 
     .line 126
-    :try_start_2f
+    :try_start_31
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_32
-    .catchall {:try_start_2f .. :try_end_32} :catchall_38
+    :try_end_34
+    .catchall {:try_start_31 .. :try_end_34} :catchall_3a
 
-    :try_start_32
+    :try_start_34
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_35
-    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_35} :catch_36
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_34 .. :try_end_37} :catch_38
 
     return-object v2
 
-    :catch_36
+    :catch_38
     move-exception p0
 
-    goto :goto_4c
+    goto :goto_4e
 
-    :catchall_38
+    :catchall_3a
     move-exception p0
 
-    goto :goto_43
+    goto :goto_45
 
     .line 118
-    :goto_3a
-    :try_start_3a
+    :goto_3c
+    :try_start_3c
     invoke-virtual {p0}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_3d
-    .catchall {:try_start_3a .. :try_end_3d} :catchall_3e
+    :try_end_3f
+    .catchall {:try_start_3c .. :try_end_3f} :catchall_40
 
-    goto :goto_42
+    goto :goto_44
 
-    :catchall_3e
+    :catchall_40
     move-exception p0
 
-    :try_start_3f
+    :try_start_41
     invoke-virtual {v2, p0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_42
+    :goto_44
     throw v2
-    :try_end_43
-    .catchall {:try_start_3f .. :try_end_43} :catchall_38
+    :try_end_45
+    .catchall {:try_start_41 .. :try_end_45} :catchall_3a
 
-    :goto_43
-    :try_start_43
+    :goto_45
+    :try_start_45
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_46
-    .catchall {:try_start_43 .. :try_end_46} :catchall_47
+    :try_end_48
+    .catchall {:try_start_45 .. :try_end_48} :catchall_49
 
-    goto :goto_4b
+    goto :goto_4d
 
-    :catchall_47
+    :catchall_49
     move-exception v0
 
-    :try_start_48
+    :try_start_4a
     invoke-virtual {p0, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    :goto_4b
+    :goto_4d
     throw p0
-    :try_end_4c
-    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_4c} :catch_36
+    :try_end_4e
+    .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_4e} :catch_38
 
     .line 127
-    :goto_4c
+    :goto_4e
     invoke-virtual {p0}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-object v1

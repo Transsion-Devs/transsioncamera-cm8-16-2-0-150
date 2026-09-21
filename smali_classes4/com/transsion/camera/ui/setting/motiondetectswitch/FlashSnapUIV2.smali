@@ -947,6 +947,8 @@
     .line 200
     invoke-super {p0, p1}, Lcom/transsion/camera/ui/setting/motiondetectswitch/MotionDetectSwitchUI;->setDeviceSetting(Lcom/transsion/camera/app/common/setting/ISetting;)V
 
+    if-eqz p1, :cond_e
+
     .line 201
     new-instance v0, Lcom/transsion/camera/ui/setting/motiondetectswitch/FlashSnapUIV2$FlashSnapV2Callback;
 
@@ -956,6 +958,7 @@
 
     invoke-interface {p1, v0}, Lcom/transsion/camera/app/common/setting/ISetting;->setSettingDataCallback(Lcom/transsion/camera/app/common/setting/ISetting$ISettingDataCallback;)V
 
+    :cond_e
     return-void
 .end method
 
