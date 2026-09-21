@@ -1,0 +1,37 @@
+# TranssionCamera CM8 port — pinned assembled-dex checksums
+#
+# artifacts/ are the shipped, pinned dex binaries. CHECKSUMS.md5 and
+# CHECKSUMS.sha256 are generated directly from those files and are the
+# machine-checkable reference (`md5sum -c CHECKSUMS.md5`).
+#
+# NOTE: smali 2.5.2 assembly is NOT byte-deterministic across runs
+# (JVM-dependent item ordering), so re-running scripts/reassemble.sh does
+# not reproduce these exact bytes. The deterministic guarantees are:
+#   * scripts/verify.sh  — every tree round-trips clean (smali a -> baksmali
+#                          d, minus static-init noise) AND ModeUIPolicy +
+#                          ModeFeatureProvider are byte-identical to stock.
+# artifacts/ + CHECKSUMS.* are the pinned snapshot produced once at commit
+# time via: scripts/reassemble.sh --to-artifacts
+#
+# Stock dex md5s (from original/checksums.txt, for reference):
+#   f8608d4df462bbc2942f02469a739809  classes.dex    (smali/)
+#   bf9cb11b57ba887b46fd95be049d2192  classes2.dex   (smali_classes2/)
+#   067ed1c5e2285bddd7108bd537fa9464  classes3.dex   (smali_classes3/)
+#   6483fa544c118b690e7712b498568540  classes4.dex   (smali_classes4/)
+#   (no stock classes5 — bridge is port-only, 16 files)
+#
+# Port pinned dex (artifacts/):
+#   md5   126d9c31f3ef49a9d2fc161101c4aa17  smali.dex
+#   md5   71cf5b2fdc1e8eaf67a18a458a2339e1  smali_classes2.dex
+#   md5   62ffd24c342815963e90664a5ffbe522  smali_classes3.dex
+#   md5   6a4b89978463c6362d63c6ca3870562d  smali_classes4.dex
+#   md5   5adef49aae818ad0dd6f37b613e89e4f  smali_classes5.dex
+#
+#   sha256 (see CHECKSUMS.sha256 for the full list)
+#
+# Verification policy:
+#   * scripts/verify.sh PASS on all five trees (round-trip clean).
+#   * ModeUIPolicy.smali and ModeFeatureProvider.smali are byte-identical
+#     to the stock baseline (asserted in verify.sh).
+#   * `md5sum -c CHECKSUMS.md5` and `sha256sum -c CHECKSUMS.sha256` PASS
+#     against the committed artifacts/.

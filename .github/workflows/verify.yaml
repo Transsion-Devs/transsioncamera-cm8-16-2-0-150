@@ -1,0 +1,30 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify-roundtrip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install smali/baksmali (API 34 toolchain)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y smali baksmali
+
+      - name: Verify all trees round-trip + stock-byte assertions
+        run: bash scripts/verify.sh
+
+      - name: Reassemble to dex
+        run: bash scripts/reassemble.sh
+
+      - name: Check pinned checksums
+        run: |
+          md5sum -c CHECKSUMS.md5
+          sha256sum -c CHECKSUMS.sha256
