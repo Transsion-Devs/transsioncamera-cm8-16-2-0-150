@@ -2,7 +2,7 @@
 # Reassemble the edited smali trees to dex files under artifacts/.
 #
 # Usage: scripts/reassemble.sh [tree ...]
-#   With no args, reassembles all four trees.
+#   With no args, reassembles all five trees.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -10,7 +10,7 @@ API=34
 mkdir -p artifacts
 
 trees=("$@")
-[ "${#trees[@]}" -eq 0 ] && trees=(smali smali_classes2 smali_classes3 smali_classes4)
+[ "${#trees[@]}" -eq 0 ] && trees=(smali smali_classes2 smali_classes3 smali_classes4 smali_classes5)
 
 for t in "${trees[@]}"; do
   [ -d "$t" ] || { echo "ERROR: tree $t missing"; exit 1; }

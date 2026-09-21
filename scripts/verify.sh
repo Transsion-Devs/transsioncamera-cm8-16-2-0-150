@@ -3,7 +3,7 @@
 # pinned toolchain and round-trips (after normalizing static-init noise) to
 # exactly the committed tree.
 #
-# Usage: scripts/verify.sh [smali|smali_classes2|smali_classes3|smali_classes4]
+# Usage: scripts/verify.sh [smali|smali_classes2|smali_classes3|smali_classes4|smali_classes5]
 #   (with no args, verifies all trees)
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -14,7 +14,7 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 trees=("$@")
-[ "${#trees[@]}" -eq 0 ] && trees=(smali smali_classes2 smali_classes3 smali_classes4)
+[ "${#trees[@]}" -eq 0 ] && trees=(smali smali_classes2 smali_classes3 smali_classes4 smali_classes5)
 
 fail=0
 for t in "${trees[@]}"; do
