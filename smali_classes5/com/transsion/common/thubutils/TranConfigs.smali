@@ -99,7 +99,7 @@
 .end method
 
 .method public getAsset(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-    .registers 8
+    .registers 9
 
     .line 1
     sget-object v0, Lcom/transsion/common/thubutils/TranConfigs;->c:Ljava/util/List;
@@ -140,13 +140,15 @@
 
     const-string v3, "/"
 
-    if-eqz v2, :cond_81
+    if-eqz v2, :cond_ab
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
+
+    move-object v5, v2
 
     .line 7
     new-instance v4, Ljava/lang/StringBuilder;
@@ -200,7 +202,49 @@
 
     invoke-static {v1, v3}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-static {}, Lcom/transsion/hubsdk/thubutils/AssetFallback;->ensure()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_89
+
+    invoke-virtual {v5, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_89
+
+    invoke-static {p1, p2}, Lcom/transsion/hubsdk/thubutils/AssetFallback;->getAssetLazy(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_89
+
+    .line 10
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "getAsset: lazy file is : "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-object v3
+
     .line 9
+    :cond_89
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -236,7 +280,7 @@
     return-object v3
 
     .line 15
-    :cond_81
+    :cond_ab
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
