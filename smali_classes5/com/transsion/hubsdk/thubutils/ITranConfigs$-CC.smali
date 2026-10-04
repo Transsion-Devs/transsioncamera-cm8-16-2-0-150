@@ -3,6 +3,10 @@
 .source "SourceFile"
 
 
+# static fields
+.field private static sInstance:Lcom/transsion/hubsdk/thubutils/ITranConfigs;
+
+
 # direct methods
 .method public static $default$getAsset(Lcom/transsion/hubsdk/thubutils/ITranConfigs;Ljava/lang/String;)Ljava/io/File;
     .registers 2
@@ -113,26 +117,23 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 2
 
     sget-object v0, Lcom/transsion/hubsdk/thubutils/ITranConfigs;->CLASS_PATH:Ljava/lang/String;
+
+    new-instance v0, Lcom/transsion/common/thubutils/TranConfigs;
+
+    invoke-direct {v0}, Lcom/transsion/common/thubutils/TranConfigs;-><init>()V
+
+    sput-object v0, Lcom/transsion/hubsdk/thubutils/ITranConfigs$-CC;->sInstance:Lcom/transsion/hubsdk/thubutils/ITranConfigs;
 
     return-void
 .end method
 
 .method public static Instance()Lcom/transsion/hubsdk/thubutils/ITranConfigs;
-    .registers 2
+    .registers 1
 
-    .line 1
-    sget-object v0, Lcom/transsion/hubsdk/thubutils/ITranConfigs;->CLASS_INFO:Lthubutils/a;
-
-    const-string v1, "/system/framework/thubutils.jar"
-
-    invoke-virtual {v0, v1}, Lthubutils/a;->a(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/transsion/hubsdk/thubutils/ITranConfigs;
+    sget-object v0, Lcom/transsion/hubsdk/thubutils/ITranConfigs$-CC;->sInstance:Lcom/transsion/hubsdk/thubutils/ITranConfigs;
 
     return-object v0
 .end method

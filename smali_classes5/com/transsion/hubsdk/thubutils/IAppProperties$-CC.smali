@@ -3,6 +3,10 @@
 .source "SourceFile"
 
 
+# static fields
+.field private static sInstance:Lcom/transsion/hubsdk/thubutils/IAppProperties;
+
+
 # direct methods
 .method public static $default$get(Lcom/transsion/hubsdk/thubutils/IAppProperties;Ljava/lang/String;)Ljava/lang/String;
     .registers 2
@@ -31,26 +35,23 @@
 .end method
 
 .method static constructor <clinit>()V
-    .registers 1
+    .registers 2
 
     sget-object v0, Lcom/transsion/hubsdk/thubutils/IAppProperties;->CLASS_PATH:Ljava/lang/String;
+
+    new-instance v0, Lcom/transsion/common/thubutils/AppProperties;
+
+    invoke-direct {v0}, Lcom/transsion/common/thubutils/AppProperties;-><init>()V
+
+    sput-object v0, Lcom/transsion/hubsdk/thubutils/IAppProperties$-CC;->sInstance:Lcom/transsion/hubsdk/thubutils/IAppProperties;
 
     return-void
 .end method
 
 .method public static Instance()Lcom/transsion/hubsdk/thubutils/IAppProperties;
-    .registers 2
+    .registers 1
 
-    .line 1
-    sget-object v0, Lcom/transsion/hubsdk/thubutils/IAppProperties;->CLASS_INFO:Lthubutils/a;
-
-    const-string v1, "/system/framework/thubutils.jar"
-
-    invoke-virtual {v0, v1}, Lthubutils/a;->a(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/transsion/hubsdk/thubutils/IAppProperties;
+    sget-object v0, Lcom/transsion/hubsdk/thubutils/IAppProperties$-CC;->sInstance:Lcom/transsion/hubsdk/thubutils/IAppProperties;
 
     return-object v0
 .end method
