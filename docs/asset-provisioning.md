@@ -1,33 +1,42 @@
 # Asset Provisioning Contract
 
-## Stock layout (16.2.0.150 firmware)
+## Stock layout (16.3.0.140 firmware)
 
 The stock firmware provisions TranssionCamera assets across three locations:
 
 | Source | Destination | Count |
 |--------|-------------|-------|
 | `system_ext/app/TranssionCamera/TranssionCamera.apk` | APK (own assets) | — |
-| `tr_product/etc/asset/TranssionCamera/` | `tr_product` partition | 465 files |
-| `tr_product/lib64/*.so` | `tr_product` partition | 47 libs |
+| `tr_product/etc/asset/TranssionCamera/` | `tr_product` partition | 466 files |
+| `tr_product/lib64/*.so` | `tr_product` partition | 46 libs |
 | `odm/etc/asset/camera/` | `odm` partition | 671 files |
+
+`system_ext/etc/asset/` does **not** exist in 16.3.0.140; the live stock asset
+location is `/tr_product/etc/asset/TranssionCamera/`.
 
 The app locates partition assets via `CamAssetManager.getAssetPath()` →
 `TranConfigsManager.getAsset()` → `TranThubConfigs` / `TranAospConfigs`
-→ `TranConfigs.getAsset()`, which probes partition-rooted paths.
+→ `TranConfigs.getAsset()`, which probes partition-rooted paths. The resolved
+path shape is `<root>/etc/asset/<namespace>/<asset>`, with the namespace being
+the string passed to `TranConfigsManager.initialize()` (`"TranssionCamera"` for
+the camera).
 
 ## Port model: self-contained APK
 
 CM8 has no `tr_product` partition, and the camera is built with the in-tree
-overlay rather than relying on extra partition provisioning. The port instead
-embeds the full payload in the APK:
+`TranssionCameraOverlay` rather than relying on extra partition provisioning.
+The port instead embeds the full payload in the APK:
 
-- `payload/etc/asset/TranssionCamera/**` (ALL 465 files) →
+- `payload/etc/asset/TranssionCamera/**` (ALL 466 files) →
   `assets/camasset/etc/asset/TranssionCamera/**`
-- `payload/lib64/**` (ALL 47 libs) → `lib/arm64-v8a/**`
+- `payload/lib64/**` (ALL 46 libs) → `lib/arm64-v8a/**`
 
 `scripts/build_selfcontained.sh` assembles the APK from the stock base, the
-pinned `artifacts/` dex and `payload/`, and FAILS unless every one of the 465
-assets and 47 libs is present (exact-count self-containment check).
+pinned `artifacts/` dex and `payload/`, and FAILS unless every one of the 466
+assets and 46 libs is present (exact-count self-containment check).
+
+The APEX `/system/apex/com.transsion.thub.core.apex` is deliberately **not**
+integrated: the HubSDK classes it would provide are carried inside the APK.
 
 ## Wiring (how the bundled payload resolves)
 
@@ -53,18 +62,28 @@ wire it:
    logging and falling back to `CamAssetManager.getAssetPath("DocDetectV15.xbin")`
    on failure.
 
-Known limitation: the `ITranConfigs.Instance()` shim (`thubutils/a`) falls
-back to a default `ITranConfigs$a` (all getters return null) when the system
-`thubutils.jar` is absent, so not every `CamAssetManager.getAssetPath()`
-call site resolves the bundled payload — `DocumentMode` is wired directly as
-the canonical consumer.
+### Known open item: `ITranConfigs.Instance()`
+
+`ITranConfigs.Instance()` / `IAppProperties.Instance()` in classes5 delegate to
+`$-CC.Instance()`, which loads `/system/framework/thubutils.jar`. That path does
+not exist (stock only has `/system_ext/framework/thubutils.jar`), so the
+`ITranConfigs$a` fallback is used and its getters return null — meaning not every
+`CamAssetManager.getAssetPath()` call site resolves the bundled payload.
+`DocumentMode` is wired directly as the canonical consumer.
+
+`smali_classes5` already carries the two classes the stock THUB APEX would have
+supplied (`com/transsion/hubsdk/tranthubutils/TranConfigs` and
+`TranAppProperties`, byte-identical to the APEX `thub-common.jar` versions).
+Remaining work is to rewire the interface `Instance()` methods to the bundled
+`com.transsion.common.thubutils.*` implementations while preserving the
+initialized namespace (it is stored in an instance field set by `initialize()`).
 
 ## Verification
 
 ```bash
-# Reassemble the self-contained APK; asserts all 465 assets + 47 libs embed
+# Reassemble the self-contained APK; asserts all 466 assets + 46 libs embed
 bash scripts/build_selfcontained.sh build/TranssionCamera_selfcontained.apk
 
-# CountAssets embedded (465 payload files under assets/camasset + dir entries)
+# CountAssets embedded (466 payload files under assets/camasset + dir entries)
 unzip -Z1 build/TranssionCamera_selfcontained.apk | grep -c '^assets/camasset/'
 ```

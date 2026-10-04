@@ -1,48 +1,53 @@
 # TranssionCamera CM8 Port
 
-Smali-level port of TranssionCamera 16.2.0.150 to the TECNO CM8 device tree.
+Smali-level port of TranssionCamera **16.3.0.140** to the TECNO CM8 device tree.
 
-The camera and its overlay (`TranCamera_Overlay_CM8_OP_ui5`) are built in the
-device tree — this repo pins the smali changes and the self-contained asset
-payload, and provides the packaging script used to assemble the APK.
+The camera and its overlay (`TranssionCameraOverlay`) are built in the device tree
+and signed as part of the ROM build. This repo pins the smali changes and the
+self-contained asset payload, and provides the packaging script used to assemble
+the APK that the tree consumes.
 
 ## Repository layout
 
 | Path | Contents |
 |------|----------|
-| `original/` | Stock APK + manifest + checksums (unmodified, firmware source) |
-| `smali/` | classes.dex disassembly (6341 files) |
-| `smali_classes2/` | classes2.dex disassembly (4928 files) |
-| `smali_classes3/` | classes3.dex disassembly (7961 files) |
-| `smali_classes4/` | classes4.dex disassembly (6073 files) |
+| `original/` | Stock 16.3.0.140 APK + manifest + checksums (unmodified, firmware source) |
+| `smali/` | classes.dex disassembly (6346 files) |
+| `smali_classes2/` | classes2.dex disassembly (5011 files) |
+| `smali_classes3/` | classes3.dex disassembly (7968 files) |
+| `smali_classes4/` | classes4.dex disassembly (6158 files) |
 | `smali_classes5/` | classes5.dex — HubSDK bridge incl. AssetFallback (17 files, not in stock APK) |
-| `payload/` | Self-contained payload: ALL 465 `tr_product/etc/asset/TranssionCamera/` assets + 47 `tr_product/lib64/*.so` |
+| `payload/` | Self-contained payload: ALL 466 `tr_product/etc/asset/TranssionCamera/` assets + 46 `tr_product/lib64/*.so` |
 | `artifacts/` | Pinned assembled dex files (md5/sha256 in CHECKSUMS) |
 | `docs/` | Asset provisioning contract and port notes |
 | `scripts/` | reassemble.sh, verify.sh, build_selfcontained.sh, normalize-smali.sh |
 
-## Changes vs stock
+The stock 16.3.0.140 APK ships four dex files (all `dex.039`); the port adds
+`classes5.dex` for the HubSDK bridge.
 
-| Commit | Change | Files |
-|--------|--------|-------|
-| C2 | InteractiveUIManager null-guard | 1 (classes3) |
-| C3 | MotionDetectSwitchUI, FlashSnapUIV2, FileUtil null-guards | 3 (classes4) |
-| C4 | HubSDK bridge classes5 (new dex, not in stock) | 16 (classes5) |
-| C5 | Verification hardening: stock-byte assertions, build/ reassembly policy, checksum emission | scripts/ |
-| C6 | Pin artifacts + CHECKSUMS + CI workflow | artifacts/, CHECKSUMS\*, README.md |
-| C7 | Self-containment: DocumentMode reads bundled model; AssetFallback extraction + asset-root hookup; full 465+47 payload | 1 (classes3), 2 (classes5), `payload/`, `scripts/build_selfcontained.sh` |
+## Changes vs stock 16.3.0.140
 
-`ModeUIPolicy` and `ModeFeatureProvider` stay byte-identical to baseline —
-mode order/config comes from the in-tree `TranCamera_Overlay_CM8_OP_ui5`
-overlay, not from smali.
+| Change | Files |
+|--------|-------|
+| `InteractiveUIManager` null-guard on `DeviceSetting` | 1 (classes3) |
+| `MotionDetectSwitchUI`, `FlashSnapUIV2`, `FileUtil` null-guards | 3 (classes4) |
+| `DocumentMode.readModel()` reads the bundled model from APK assets | 1 (classes3) |
+| HubSDK bridge (`AssetFallback`, asset-root hookup) | classes5 (new dex) |
 
-`DocumentMode.readModel()` now reads `DocDetectV15.xbin` from the APK's own
-`assets/camasset/etc/asset/TranssionCamera/` (bundled payload), falling back to
-`CamAssetManager.getAssetPath()`.
+Delta versus the stock 16.3.0.140 disassembly is exactly those five patched
+files across `smali_classes3/` and `smali_classes4/`; `smali/`,
+`smali_classes2/` and `smali_classes5/` are byte-identical to their sources.
+
+`ModeUIPolicy` and `ModeFeatureProvider` stay byte-identical to the stock
+baseline — mode order/config comes from the in-tree `TranssionCameraOverlay`,
+not from smali.
+
+Patched methods use canonical `:cond_*` labels so every tree round-trips
+byte-identically through `scripts/verify.sh`.
 
 ## Self-contained payload
 
-All 465 `tr_product/etc/asset/TranssionCamera/` files and all 47
+All 466 `tr_product/etc/asset/TranssionCamera/` files and all 46
 `tr_product/lib64/*.so` are committed under `payload/` and embedded into the
 APK (see `docs/asset-provisioning.md` for the wiring):
 
@@ -58,21 +63,29 @@ required.
 ## Verify + reassemble
 
 ```bash
-# Verify all trees round-trip clean
+# Verify all trees round-trip clean (also asserts stock-byte-identity files)
 bash scripts/verify.sh
 
 # Reassemble to dex
 bash scripts/reassemble.sh
 
+# Re-pin the shipped dex + regenerate CHECKSUMS.md5 / CHECKSUMS.sha256
+bash scripts/reassemble.sh --to-artifacts
+
 # Check against pinned checksums
 md5sum -c CHECKSUMS.md5
 sha256sum -c CHECKSUMS.sha256
 
-# Assemble the self-contained APK (asserts ALL 465 assets + 47 libs embed)
+# Assemble the self-contained APK (asserts ALL 466 assets + 46 libs embed).
+# Output is intentionally left unsigned: the ROM build signs the camera.
 bash scripts/build_selfcontained.sh build/TranssionCamera_selfcontained.apk
 ```
+
+`build_selfcontained.sh` mirrors the stock Stored/Deflated split so entries read
+via `openFd()`/`openRawResourceFd()` (`resources.arsc`, `classes*.dex`, all
+`lib/arm64-v8a/*.so`, all audio) are stored uncompressed.
 
 ## Toolchain
 
 - baksmali/smali 2.5.2 (debian)
-- API level 34
+- API level 35 (matches the stock dex format `dex.039` / `targetSdkVersion 35`)
