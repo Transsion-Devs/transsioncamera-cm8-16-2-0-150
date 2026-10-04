@@ -66,6 +66,7 @@
     invoke-static {v0, p0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 22
+    :try_start_1b
     sget-object p0, Lcom/example/dispatcher_client/FlowBusAdapterFactory$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -76,7 +77,7 @@
 
     const/4 v0, 0x0
 
-    packed-switch p0, :pswitch_data_8e
+    packed-switch p0, :pswitch_data_9e
 
     .line 62
     new-instance p0, Ljava/lang/IllegalArgumentException;
@@ -197,10 +198,38 @@
     invoke-virtual {p0, v0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
     return-object v0
+    :try_end_8d
+    .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_8d} :catch_8e
+    .catch Ljava/lang/Error; {:try_start_1b .. :try_end_8d} :catch_8e
+    .catchall {:try_start_1b .. :try_end_8d} :catchall_8e
+
+    goto :goto_9c
+
+    :catch_8e
+    :catchall_8e
+    move-exception v0
+
+    instance-of v1, v0, Ljava/lang/IllegalArgumentException;
+
+    if-eqz v1, :cond_94
+
+    throw v0
+
+    :cond_94
+    const-string v1, "dispatcher_client"
+
+    const-string v2, "flow bus adapter unavailable"
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    const/4 v0, 0x0
+
+    :goto_9c
+    return-object v0
 
     nop
 
-    :pswitch_data_8e
+    :pswitch_data_9e
     .packed-switch 0x1
         :pswitch_7f
         :pswitch_71

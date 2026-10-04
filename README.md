@@ -33,10 +33,19 @@ The stock 16.3.0.140 APK ships four dex files (all `dex.039`); the port adds
 | `MotionDetectSwitchUI`, `FlashSnapUIV2`, `FileUtil` null-guards | 3 (classes4) |
 | `DocumentMode.readModel()` reads the bundled model from APK assets | 1 (classes3) |
 | HubSDK bridge (`AssetFallback`, asset-root hookup) | classes5 (new dex) |
+| `FlowBusAdapterFactory.getAdapter` reflective-load guard | 1 (classes dex0) |
 
-Delta versus the stock 16.3.0.140 disassembly is exactly those five patched
-files across `smali_classes3/` and `smali_classes4/`; `smali/`,
+Delta versus the stock 16.3.0.140 disassembly is exactly those six patched
+files across `smali/`, `smali_classes3/` and `smali_classes4/`;
 `smali_classes2/` and `smali_classes5/` are byte-identical to their sources.
+
+See `docs/reflective-dependency-audit.md` for the full audit of the 96
+externally-referenced `com.transsion.*` names. Short version: the ROM ships no
+Transsion APEX and no `thubutils.jar`, only `AICoreNexusFlow.apk` supplies
+referenced classes, and just 5 of the 78 unresolved names are real reflective
+class loads. Three were already guarded; the two AI adapters
+(`CVEngineAdapter`, `AecAsrAdapter`) are absent from the ROM and were loaded
+unguarded, so `getAdapter` now returns a logged `null` instead of throwing.
 
 `ModeUIPolicy` and `ModeFeatureProvider` stay byte-identical to the stock
 baseline — mode order/config comes from the in-tree `TranssionCameraOverlay`,
