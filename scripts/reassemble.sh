@@ -14,7 +14,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-API=34
+API=35
 UPDATE_ARTIFACTS=0
 [ "${1:-}" = "--to-artifacts" ] && { UPDATE_ARTIFACTS=1; shift; }
 

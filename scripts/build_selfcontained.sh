@@ -3,15 +3,15 @@
 #
 #   original/TranssionCamera.apk   stock APK (unmodified firmware source)
 #   artifacts/*.dex                pinned reassembly of the smali trees
-#   payload/                       ALL 465 tr_product assets + 47 lib64 libs
+#   payload/                       ALL 466 tr_product assets + 46 lib64 libs
 #
 # Self-containment contract (enforced at the end):
-#   - every file under assets/camasset/ equals the 465-file
+#   - every file under assets/camasset/ equals the 466-file
 #     tr_product/etc/asset/TranssionCamera/ payload (no omissions)
-#   - all 47 tr_product/lib64/*.so are present in lib/arm64-v8a/
+#   - all 46 tr_product/lib64/*.so are present in lib/arm64-v8a/
 #
 # The APK is NOT a prebuilt deliverable: the device tree builds the camera
-# with the in-tree overlay (TranCamera_Overlay_CM8_OP_ui5). This script is
+# with the in-tree overlay (TranssionCameraOverlay). This script is
 # the verification/self-containment packager for the port repo.
 #
 # Optional signing/alignment (matching the v6/v7 working builds):
@@ -58,7 +58,7 @@ for src in "${!DEXMAP[@]}"; do
 done
 for f in "$WORK"/smali*.dex; do [ -e "$f" ] && rm -f "$f"; done
 
-# 3) embed the payload (self-containment — all 465 assets + 47 libs)
+# 3) embed the payload (self-containment — all 466 assets + 46 libs)
 mkdir -p "$WORK/assets/camasset/etc/asset"
 cp -r "$PWD/$PAY_ASSETS" "$WORK/$ASSET_MOUNT"
 mkdir -p "$WORK/$LIB_MOUNT"
@@ -98,7 +98,7 @@ done < "$WORK/files.lst"
   zip -q -9 -X "$OLDPWD/$OUT" -@ < "$WORK/defl.lst" && \
   zip -q -0 -X "$OLDPWD/$OUT" -@ < "$WORK/stored.lst" )
 
-# 5) self-containment assertion: NONE of the 465 assets or 47 libs may be
+# 5) self-containment assertion: NONE of the 466 assets or 46 libs may be
 #    dropped from the assembled package.
 apklist="$(mktemp)"
 trap 'rm -rf "$WORK" "$apklist"' EXIT

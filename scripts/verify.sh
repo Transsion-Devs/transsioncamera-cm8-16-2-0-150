@@ -8,7 +8,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-API=34
+API=35
 NORM="$PWD/scripts/normalize-smali.sh"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
@@ -16,10 +16,30 @@ trap 'rm -rf "$TMP"' EXIT
 trees=("$@")
 [ "${#trees[@]}" -eq 0 ] && trees=(smali smali_classes2 smali_classes3 smali_classes4 smali_classes5)
 
-# Stock-byte-identity policy files: these MUST never be edited. Compare
-# against the pristine baseline commit path.
+# Stock-byte-identity policy files: these MUST never be edited. Compared
+# against the pristine stock baseline resolved at the top of this script.
 stock_assertions="smali_classes3/com/transsion/camera/app/ModeUIPolicy.smali
 smali_classes3/com/transsion/camera/app/common/provider/ModeFeatureProvider.smali"
+
+# Pristine stock baseline for the byte-identity assertions below: the commit
+# that re-based the trees onto the stock firmware, i.e. the state BEFORE any
+# port patch. Deliberately NOT the root commit -- after a firmware rebase the
+# root commit belongs to the older extraction and reports false failures.
+# Override with BASELINE_CMT=<sha> if that history is renamed.
+base_cmt=""
+if [ -n "${BASELINE_CMT:-}" ]; then
+  base_cmt="$BASELINE_CMT"
+else
+  base_cmt="$(git log --grep='rebase port onto stock' --format=%H -1 2>/dev/null || true)"
+fi
+if [ -z "$base_cmt" ]; then
+  base_cmt="$(git rev-list --max-parents=0 HEAD 2>/dev/null | head -n1)"
+fi
+if [ -n "$base_cmt" ]; then
+  echo "stock baseline: $base_cmt ($(git log -1 --format=%s "$base_cmt" 2>/dev/null))"
+else
+  echo "stock baseline: UNRESOLVED (stock assertions skipped)"
+fi
 
 fail=0
 for pair in "${trees[@]}"; do
@@ -57,8 +77,6 @@ for f in $stock_assertions; do
     echo "  SKIP stock assertion (no git checkout): $f"
     continue
   fi
-  # The pristine baseline commit is the root commit of this history.
-  base_cmt="$(git rev-list --max-parents=0 HEAD 2>/dev/null | head -n1)"
   if [ -n "$base_cmt" ] && git rev-parse --verify -q "$base_cmt" >/dev/null 2>&1; then
     if git show "$base_cmt:$f" 2>/dev/null | diff -q - "$base" >/dev/null; then
       echo "  STOCK OK: $f (byte-identical to baseline $base_cmt)"
@@ -67,7 +85,7 @@ for f in $stock_assertions; do
       fail=1
     fi
   else
-    echo "  SKIP stock assertion (no root commit found)"
+    echo "  SKIP stock assertion (no baseline commit found)"
   fi
 done
 
