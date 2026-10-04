@@ -1,18 +1,18 @@
-# TranssionCamera stock APK (16.2.0.150) — original extraction, untouched.
+# TranssionCamera stock APK (16.3.0.140) — original extraction, untouched.
 #
-# SOURCE: stock firmware tree /home/murimi14/cm8-16.2.0.150/
+# SOURCE: stock firmware tree /home/murimi14/cm8-16.3.0.140/
 #   system_ext/app/TranssionCamera/TranssionCamera.apk
-#   tr_product/etc/asset/TranssionCamera/          (465 asset files, NOT in APK;
-#                                                   provisioned via device tree
-#                                                   blob list, see docs/asset-provisioning.md)
-#   tr_product/lib64/                              (47 native libs, same split)
+#   tr_product/etc/asset/TranssionCamera/          (466 asset files, NOT in APK;
+#                                                   embedded in the port APK,
+#                                                   see docs/asset-provisioning.md)
+#   tr_product/lib64/                              (46 native libs, same split)
 #
 # The smali trees (smali/..smali_classes4/) are baksmali of the four dex
 # inside this APK and MUST reassemble back to the md5s below.
-f8608d4df462bbc2942f02469a739809  classes.dex     (smali/)
-bf9cb11b57ba887b46fd95be049d2192  classes2.dex    (smali_classes2/)
-067ed1c5e2285bddd7108bd537fa9464  classes3.dex    (smali_classes3/)
-6483fa544c118b690e7712b498568540  classes4.dex    (smali_classes4/)
+79e626f2f09a7c820cddda9657c7c992  classes.dex     (smali/)
+f147d41cf92a119852246293e8e130be  classes2.dex    (smali_classes2/)
+dbdc646d216bfed8e2c6d1cdc6b01b09  classes3.dex    (smali_classes3/)
+3839b8b0ccbd21022842be4b61544e78  classes4.dex    (smali_classes4/)
 # APK itself
-4fbbf9fa06c02a67752e0966331ec08c  original/TranssionCamera.apk   (md5)
-47782b224c4e510d3072b40ff907c053c94cf163fa6477a98d0b39c6655ef860  original/TranssionCamera.apk  (sha256)
+a896e785023328d15561cdbe5b840e6e  original/TranssionCamera.apk   (md5)
+b2ca72c93bf0da2213aff75485401998bb8b8afb0c17fa185850206b2b9b2696  original/TranssionCamera.apk  (sha256)
