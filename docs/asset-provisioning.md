@@ -62,21 +62,62 @@ wire it:
    logging and falling back to `CamAssetManager.getAssetPath("DocDetectV15.xbin")`
    on failure.
 
-### Known open item: `ITranConfigs.Instance()`
+### HubSDK instance resolution (rewired, no APEX)
 
-`ITranConfigs.Instance()` / `IAppProperties.Instance()` in classes5 delegate to
-`$-CC.Instance()`, which loads `/system/framework/thubutils.jar`. That path does
-not exist (stock only has `/system_ext/framework/thubutils.jar`), so the
-`ITranConfigs$a` fallback is used and its getters return null — meaning not every
-`CamAssetManager.getAssetPath()` call site resolves the bundled payload.
-`DocumentMode` is wired directly as the canonical consumer.
+Stock resolves `ITranConfigs` / `IAppProperties` through `thubutils/a`, which
+builds a `PathClassLoader` over `ITranConfigs.CLASS_PATH`
+(`/system/framework/thubutils.jar` — a path that exists on neither stock nor
+CM8; stock only has `/system_ext/framework/thubutils.jar`) and then gates the
+load behind `thubutils/c.c(...)`, which consults the THUB feature config. When
+the load is skipped, `thubutils/a` falls back to the `ITranConfigs$a` /
+`IAppProperties$a` stubs, whose getters return null.
 
-`smali_classes5` already carries the two classes the stock THUB APEX would have
-supplied (`com/transsion/hubsdk/tranthubutils/TranConfigs` and
-`TranAppProperties`, byte-identical to the APEX `thub-common.jar` versions).
-Remaining work is to rewire the interface `Instance()` methods to the bundled
-`com.transsion.common.thubutils.*` implementations while preserving the
-initialized namespace (it is stored in an instance field set by `initialize()`).
+Both failure modes are removed. `ITranConfigs$-CC.Instance()` and
+`IAppProperties$-CC.Instance()` now build the bundled implementation directly:
+
+```
+ITranConfigs$-CC.<clinit>   new com.transsion.common.thubutils.TranConfigs   -> sInstance
+IAppProperties$-CC.<clinit> new com.transsion.common.thubutils.AppProperties -> sInstance
+Instance()                  return sInstance
+```
+
+The instance is created in `<clinit>` and cached, so it is created once and is
+race-free (class initialisation is VM-synchronised). The cache is essential, not
+cosmetic: `TranConfigs.initialize(String)` stores the namespace in the *instance*
+field `a`, so returning a fresh object per call would silently lose the
+`"TranssionCamera"` namespace set by `CamAssetManager.init()`.
+
+`thubutils/a`, `CLASS_INFO` and `CLASS_PATH` are left in place (stock, inert).
+Verified: zero remaining `invoke` sites for `thubutils/a.a(String)`; the only
+`/system/framework/thubutils.jar` references left are the two unused `CLASS_PATH`
+field constants.
+
+### Both adapter paths resolve
+
+`TranConfigsManager` picks its adapter with
+`TranVersion.isIntegratedThubCore(...)`. `THUBCORE_VERSION` is read reflectively
+from `com.transsion.hubsdk.os.TranBuild`, which ships only inside the THUB APEX,
+so on CM8 it degrades to the default `"0"` (the `<clinit>` is fully guarded and
+logs rather than throwing). That selects the AOSP adapter, but **both** now work
+in-APK:
+
+| Adapter | How it loads `hubsdk.tranthubutils.TranConfigs` | Status |
+|---------|---------------------------------------------------|--------|
+| `TranAospConfigs` | `TranDoorMan.getClass()` → single-arg `Class.forName` (caller's loader = app dex) → finds classes5 | OK |
+| `TranThubConfigs` | direct `new` of the classes5 class; delegates only to `mManager`, no other THUB dependency | OK |
+
+Resolved chain:
+
+```
+CamAssetManager.getAssetPath(name)
+  -> TranConfigsManager.getAsset(...)
+    -> TranAospConfigs / TranThubConfigs
+      -> hubsdk.tranthubutils.TranConfigs            (classes5, APEX shim)
+        -> ITranConfigs.Instance()                   (rewired)
+          -> common.thubutils.TranConfigs            (classes5, bundled impl)
+            -> thubutils/b.b() roots  +  AssetFallback.ensure() / getAssetLazy()
+              -> <files>/apkasset/etc/asset/TranssionCamera/<name>
+```
 
 ## Verification
 
